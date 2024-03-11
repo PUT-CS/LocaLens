@@ -15,17 +15,36 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "pl.localens"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "pl.localens"
+      "package": "pl.localens",
+      "config" : {
+        "googleMaps" : {
+          "apiKey": "AIzaSyAjMBXngcuaaoUXlctrwz2HMPPnSN91W4M"
+        }
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "@react-native-google-signin/google-signin",
+        {
+          "iosUrlScheme": "com.googleusercontent.apps._some_id_here_"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "05f9200f-799f-4da6-9b9f-b0a8a583d159"
+      }
     }
   }
 }
