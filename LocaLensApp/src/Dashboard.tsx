@@ -1,10 +1,11 @@
-import { View, Text, Button } from "react-native";
+import { View, Text, Button, Image } from "react-native";
 import AppScreens from "./AppScreens";
+import { Realm } from "@realm/react";
 
-export default function Dashboard({ navigation }) {
+export default function Dashboard({ route, navigation }) {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Home Screen</Text>
+      <UserHeader userInfo={route.params.userInfo} />
       <Button
         title={AppScreens.Map}
         onPress={() => navigation.navigate(AppScreens.Map)}
@@ -17,6 +18,21 @@ export default function Dashboard({ navigation }) {
       >
         <Text>{AppScreens.MyPins}</Text>
       </Button>
+    </View>
+  );
+}
+
+function UserHeader({ userInfo }) {
+  console.log(JSON.stringify(userInfo, null, 2));
+  console.log(userInfo.user.photo);
+  return (
+    <View>
+      <Text>User Info</Text>
+      <Text>{userInfo.user.givenName + " " + userInfo.user.familyName}</Text>
+      <Image
+        source={{ uri: userInfo.user.photo }}
+        style={{ width: 80, height: 80 }}
+      ></Image>
     </View>
   );
 }

@@ -23,7 +23,7 @@ export default function Login({ navigation }) {
       // console.log(JSON.stringify(userInfo, null, 2));
       // setUserInfo(userInfo);
       await AsyncStorage.setItem("@user", JSON.stringify(userInfo));
-      navigation.replace("Dashboard");
+      navigation.replace("Dashboard", { userInfo: userInfo });
     } catch (error) {
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
         console.log("sign in cancelled");
