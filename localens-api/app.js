@@ -74,6 +74,10 @@ app.get("/pins/user", async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+try {
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
+} catch (e) {
+  console.error(e);
+}
