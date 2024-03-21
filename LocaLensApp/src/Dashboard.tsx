@@ -1,6 +1,5 @@
 import { View, Text, Button, Image } from "react-native";
 import AppScreens from "./AppScreens";
-import { Realm } from "@realm/react";
 
 export default function Dashboard({ route, navigation }) {
   return (

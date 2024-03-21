@@ -3,6 +3,7 @@ enum AppScreens {
   Dashboard = "Dashboard",
   Map = "Map",
   MyPins = "My Pins",
+  Camera = "Camera",
 }
 
 export default AppScreens;

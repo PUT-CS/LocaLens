@@ -6,6 +6,7 @@ import MapScreen from "./src/MapScreen";
 import Dashboard from "./src/Dashboard";
 import Login from "./src/Login";
 import AppScreens from "./src/AppScreens";
+import Camera from "./src/Camera";
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +25,11 @@ function App() {
           name={AppScreens.MyPins}
           component={MyPins}
           options={{ title: AppScreens.MyPins }}
+        />
+        <Stack.Screen
+          name={AppScreens.Camera}
+          component={Camera}
+          options={{ title: AppScreens.Camera }}
         />
       </Stack.Navigator>
     </NavigationContainer>
