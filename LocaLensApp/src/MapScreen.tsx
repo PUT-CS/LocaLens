@@ -12,7 +12,9 @@ export default function MapScreen({ navigation }) {
       <View style={localStyle.button}>
         <Button
           title="Add Pin"
-          onPress={() => navigation.navigate(AppScreens.Camera)}
+          onPress={async () => {
+            navigation.navigate(AppScreens.Camera);
+          }}
         />
       </View>
     </View>
