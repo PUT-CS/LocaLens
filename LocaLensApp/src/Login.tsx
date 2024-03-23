@@ -6,6 +6,8 @@ import {
 } from "@react-native-google-signin/google-signin";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as WebBrowser from "expo-web-browser";
+import { StyleSheet } from "react-native";
+import { styles } from "./styles";
 
 GoogleSignin.configure({
   webClientId: process.env.WEB_ID,
@@ -41,16 +43,22 @@ export default function Login({ navigation }) {
     }
   };
 
-  // const [userInfo, setUserInfo] = React.useState(null);
   return (
-    <View>
-      <Text>Login</Text>
+    <View style={styles.container}>
+      <Text style={styles.header}>Welcome</Text>
       <GoogleSigninButton
         size={GoogleSigninButton.Size.Wide}
         color={GoogleSigninButton.Color.Dark}
         onPress={loginOnPress}
       />
-      {/* <Text>{JSON.stringify(userInfo, null, 2)}</Text> */}
     </View>
   );
 }
+const localStyle = StyleSheet.create({
+  // container: {
+  //   verticalAlign: "middle",
+  //   width: "100%",
+  //   height: "100%",
+  //   alignItems: "center",
+  // },
+});
