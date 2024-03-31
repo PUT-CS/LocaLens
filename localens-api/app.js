@@ -37,9 +37,9 @@ app.get("/pins", async (req, res) => {
 
 // POST a new pin
 app.post("/pins", async (req, res) => {
-  const { userEmail, lat, long, description } = req.body;
+  const { userEmail, lat, long, description, photo } = req.body;
   try {
-    const newPin = new Pin({ userEmail, lat, long, description });
+    const newPin = new Pin({ userEmail, lat, long, photo, description });
     console.log(newPin);
     await newPin.save();
     res.status(201).json(newPin);

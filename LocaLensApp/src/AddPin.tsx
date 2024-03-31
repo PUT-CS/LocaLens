@@ -50,9 +50,11 @@ export function AddPin({ route, navigation }) {
         (position) => {
           setLocation(position);
           const pin = {
+            userEmail: "test@gmail.com",
+            lat: position.coords.latitude,
+            long: position.coords.longitude,
             photo,
             description: text,
-            location: position,
           };
           uploadPin(pin);
         },
