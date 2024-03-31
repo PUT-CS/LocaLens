@@ -9,6 +9,12 @@ const PORT = process.env.PORT || 8080;
 
 app.use(bodyParser.json());
 
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  }),
+);
+
 // Define your valid API keys (You can store these in a secure way, such as environment variables)
 // Middleware to verify API key
 const verifyApiKey = (req, res, next) => {
@@ -18,8 +24,6 @@ const verifyApiKey = (req, res, next) => {
   }
   next();
 };
-
-app.use(bodyParser.json());
 
 // Apply API key verification middleware to all routes
 app.use(verifyApiKey);
@@ -37,6 +41,7 @@ app.get("/pins", async (req, res) => {
 
 // POST a new pin
 app.post("/pins", async (req, res) => {
+  console.log(req.body);
   const { userEmail, lat, long, description, photo } = req.body;
   try {
     const newPin = new Pin({ userEmail, lat, long, photo, description });

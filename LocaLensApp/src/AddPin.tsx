@@ -77,7 +77,7 @@ export function AddPin({ route, navigation }) {
       },
       body: JSON.stringify(pin),
     };
-
+    console.log(requestOptions.body);
     fetch(url, requestOptions)
       .then((res) => {
         ToastAndroid.show("Uploaded a pin", ToastAndroid.SHORT);
