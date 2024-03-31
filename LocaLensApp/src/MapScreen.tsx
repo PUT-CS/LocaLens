@@ -1,5 +1,5 @@
 import { Button, View } from "react-native";
-import MapView from "react-native-maps";
+import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 import { styles } from "./styles";
 import AppScreens from "./AppScreens";
 import { StyleSheet } from "react-native";
@@ -8,7 +8,11 @@ import { style } from "./mapStyle";
 export default function MapScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <MapView style={styles.map} customMapStyle={style}></MapView>
+      <MapView
+        provider={PROVIDER_GOOGLE}
+        style={styles.map}
+        customMapStyle={style}
+      ></MapView>
       <View style={localStyle.button}>
         <Button
           title="Add Pin"

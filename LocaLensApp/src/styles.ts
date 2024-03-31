@@ -2,19 +2,25 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   container: {
+    display: "flex",
     ...StyleSheet.absoluteFillObject,
     height: "100%",
     width: "100%",
-    justifyContent: "center",
+    backgroundColor: "green",
+  },
+  secondaryContainer: {
+    paddingTop: 20,
+    flexGrow: 1,
     alignItems: "center",
-    verticalAlign: "middle",
-    backgroundColor: "#202020",
+    width: "100%",
+    backgroundColor: "red",
+    // justifyContent: "center",
   },
   map: {
     ...StyleSheet.absoluteFillObject,
   },
   header: {
-    fontSize: 64,
+    fontSize: 56,
     color: "white",
     fontFamily: "monospace",
   },
