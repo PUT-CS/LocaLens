@@ -1,8 +1,8 @@
 import { GoogleSigninButton } from "@react-native-google-signin/google-signin";
-import { View, Text, StatusBar } from "react-native";
+import { View, Text, StatusBar, Image } from "react-native";
 import {
   GoogleSignin,
-  statusCodes,
+  statusCodes
 } from "@react-native-google-signin/google-signin";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as WebBrowser from "expo-web-browser";
@@ -12,7 +12,7 @@ import Layout from "./Layout";
 
 GoogleSignin.configure({
   webClientId: process.env.WEB_ID,
-  iosClientId: process.env.IOS_ID,
+  iosClientId: process.env.IOS_ID
 });
 
 WebBrowser.maybeCompleteAuthSession();
@@ -47,6 +47,14 @@ export default function Login({ navigation }) {
   return (
     <Layout title={"Log In"}>
       <View style={styles.secondaryContainer}>
+        <Image
+          source={require("../assets/logo.png")}
+          style={{
+            height: 200,
+            width: 300
+          }}
+          resizeMode={"contain"}
+        />
         <GoogleSigninButton
           size={GoogleSigninButton.Size.Wide}
           color={GoogleSigninButton.Color.Dark}

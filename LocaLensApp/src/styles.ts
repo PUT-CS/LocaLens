@@ -6,14 +6,12 @@ export const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
     height: "100%",
     width: "100%",
-    backgroundColor: "green",
   },
   secondaryContainer: {
     paddingTop: 20,
     flexGrow: 1,
     alignItems: "center",
     width: "100%",
-    backgroundColor: "red",
     // justifyContent: "center",
   },
   map: {
@@ -21,15 +19,14 @@ export const styles = StyleSheet.create({
   },
   header: {
     fontSize: 56,
-    color: "white",
-    fontFamily: "monospace",
+    fontFamily: "qcsr",
   },
   headerContainer: {
     height: "10%",
     width: "100%",
   },
   buttonText: {
-    fontFamily: "monospace",
+    fontFamily: "qcsr",
     fontSize: 32,
     color: "rgba(0,0,0,0)",
   },

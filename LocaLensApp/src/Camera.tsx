@@ -41,7 +41,8 @@ export default function NewPinCamera({ navigation }) {
     });
 
     navigation.navigate(AppScreens.AddPin, {
-      photo: res.node.image.uri,
+      photoUri: res.node.image.uri,
+      photoObj: photo,
       location: "location",
     });
     console.log(res);

@@ -21,10 +21,7 @@ const localStyle = StyleSheet.create({
     alignContent: "center",
     alignItems: "center",
     paddingTop: 20,
-    //    padding: 30,
     height: "10%",
-    width: "100%",
-    // backgroundColor: "#202020",
-    backgroundColor: "blue",
-  },
+    width: "100%"
+  }
 });
